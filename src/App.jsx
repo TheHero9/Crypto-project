@@ -2,10 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
-import {Switch, Route, Link} from 'react-router-dom'
+
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd'
 
-import {NavBar} from './Components'
+import {NavBar, Exchanges, Homepage, CryptoDetails, Cryptocurrencies, News} from './Components'
 
 function App() {
 
@@ -16,7 +17,17 @@ function App() {
           <NavBar/>
       </div>
       <div className="main">
-          {/* <h1>s</h1> */}
+          <Layout>
+              <div className="routes">
+                <Routes>
+                  <Route exact path="/" element={<Homepage/>}/>
+                  <Route exact path="/exchanges" element={<Exchanges/>}/>
+                  <Route exact path="/cryptocurrencies" element={<Cryptocurrencies/>}/>
+                  <Route exact path="/crypto/:coinid" element={<CryptoDetails/>}/>
+                  <Route exact path="/news" element={<News/>}/>
+                </Routes>
+              </div>
+          </Layout>
       </div>
       <div className="footer">
 
