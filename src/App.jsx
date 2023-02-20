@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 
 
-import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd'
 
 import {NavBar, Exchanges, Homepage, CryptoDetails, Cryptocurrencies, News} from './Components'
@@ -28,9 +28,19 @@ function App() {
                 </Routes>
               </div>
           </Layout>
-      </div>
-      <div className="footer">
+      
+        <div className="footer" level={5}>
+          <Typography.Title style={{color: 'white', textAlign: 'align'}}>
+            CryptoVerse <br/>
+            All rights reserved
+          </Typography.Title>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/exchanges">Exchanges</Link>
+            <Link to="/news">News</Link>
 
+          </Space>
+        </div>
       </div>
     </div>
   )
